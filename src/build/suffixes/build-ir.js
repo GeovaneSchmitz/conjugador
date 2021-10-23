@@ -7,9 +7,10 @@
  * @returns {object} Verbo conjugado.
  */
 module.exports = function buildIr(prefix) {
+  const cleanedPrefix = prefix.substring(prefix.length - 1, prefix.length) === "g" ? prefix.replace(/g$/, "j") : prefix;
   return {
     p: [
-      prefix + 'o',
+      cleanedPrefix + 'o',
       prefix + 'es',
       prefix + 'e',
       prefix + 'imos',
