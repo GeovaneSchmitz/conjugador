@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-var build = require('./src/build');
-var irregularsList = require('./src/irregulars-list');
-var isIrregular = require('./src/is-irregular');
-var isVerb = require('./src/is-verb');
+var build = require("./src/build");
+var irregularsList = require("./src/irregulars-list");
+var isIrregular = require("./src/is-irregular");
+var isVerb = require("./src/is-verb");
 
 /**
  * Conjugar qualquer verbo (regular ou irregular).
@@ -11,12 +11,13 @@ var isVerb = require('./src/is-verb');
  * @param {string} verb Um verbo qualquer.
  * @returns {object} Toda as conjugações.
  */
-module.exports = function conjugar(verb) {
-  if (!isVerb(verb)) {
-    throw new Error('Invalid verb');
-  }
+module.exports = {
+  isIrregular: isIrregular,
+  conjugar: function (verb) {
+    if (!isVerb(verb)) {
+      throw new Error("Invalid verb");
+    }
 
-  return isIrregular(verb)
-    ? irregularsList[verb]
-    : build(verb);
-}
+    return isIrregular(verb) ? irregularsList[verb] : build(verb);
+  },
+};

@@ -2,15 +2,17 @@
   "name": "conjugador",
   "version": "2.0.0",
   "description": "Um conjugador de verbos da língua portuguesa.",
-  "main": "build/conjugador.min.js",
+  "main": "dist/conjugador.min.js",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "repository": "theuves/conjugador",
   "scripts": {
     "build": "webpack --mode production",
     "test": "jasmine test/**/*.js"
   },
+  "types": "index.d.ts",
   "author": "Matheus Alves",
   "license": "MIT",
   "devDependencies": {
